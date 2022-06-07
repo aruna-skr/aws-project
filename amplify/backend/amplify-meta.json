@@ -1,0 +1,119 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awsassignment-dev-203345-authRole",
+      "UnauthRoleArn": "arn:aws:iam::776244297063:role/amplify-awsassignment-dev-203345-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::776244297063:role/amplify-awsassignment-dev-203345-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-awsassignment-dev-203345-deployment",
+      "UnauthRoleName": "amplify-awsassignment-dev-203345-unauthRole",
+      "StackName": "amplify-awsassignment-dev-203345",
+      "StackId": "arn:aws:cloudformation:ap-south-1:776244297063:stack/amplify-awsassignment-dev-203345/8eb596f0-d5f2-11ec-8103-0234254282e4",
+      "AmplifyAppId": "d1etzz3dwdb3v"
+    }
+  },
+  "auth": {
+    "awsassignment82ddfb6e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-awsassignment-dev-203345-deployment/amplify-cfn-templates/auth/awsassignment82ddfb6e-cloudformation-template.json",
+        "logicalId": "authawsassignment82ddfb6e"
+      },
+      "lastPushTimeStamp": "2022-06-03T17:43:56.436Z",
+      "output": {
+        "UserPoolId": "ap-south-1_FsUj40Wy9",
+        "AppClientIDWeb": "7clren0tribit0s4rlo49qb2o",
+        "AppClientID": "699ngjerj9qacgaiqthkcn6ai0",
+        "IdentityPoolId": "ap-south-1:0f0ee199-5d7a-410d-ba2a-920d7fde11fb",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-south-1:776244297063:userpool/ap-south-1_FsUj40Wy9",
+        "IdentityPoolName": "awsassignment82ddfb6e_identitypool_82ddfb6e__dev",
+        "UserPoolName": "awsassignment82ddfb6e_userpool_82ddfb6e"
+      },
+      "lastPushDirHash": "+Vn4S3fTyPXIEWjTHLkI6GjdFiY="
+    }
+  },
+  "api": {
+    "awsAPI": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "awsassignment82ddfb6e",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authawsassignment82ddfb6e"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "API_KEY",
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 60,
+                "apiKeyExpirationDate": "2022-08-01T07:17:51.281Z",
+                "description": "aws-project"
+              }
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "gxoodcqnrzhjhott5tliihwkgm",
+        "GraphQLAPIEndpointOutput": "https://3tmjoz7dvrg5hbh6wdnxadxqca.appsync-api.ap-south-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-atvrfxloyfah5ighcsmasure3a"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-awsassignment-dev-203345-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiawsAPI"
+      },
+      "lastPushTimeStamp": "2022-06-03T17:43:56.439Z",
+      "lastPushDirHash": "vmgae8OgMdSWrfRweUxcrGNbrtc="
+    }
+  },
+  "storage": {
+    "arunaStorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2022-06-03T17:43:56.660Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-awsassignment-dev-203345-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storagearunaStorage"
+      },
+      "output": {
+        "BucketName": "aruna-storage203345-dev",
+        "Region": "ap-south-1"
+      },
+      "lastPushDirHash": "cgPAvM09e+GJiF2GKJrMw4fYTpc="
+    }
+  }
+}

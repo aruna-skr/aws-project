@@ -1,0 +1,14 @@
+{
+  "resourceName": "arunaStorage",
+  "policyUUID": "9b8e8583",
+  "bucketName": "aruna-storage",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
