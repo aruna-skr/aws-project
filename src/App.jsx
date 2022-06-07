@@ -26,12 +26,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import AddIcon from '@material-ui/icons/Add';
 import PublishIcon from '@material-ui/icons/Publish';
 Amplify.configure(awsconfig);
-Amplify.configure({cookieStorage: {
-  domain: 'localhost',
-  secure: false,
-  path: '/',
-  expires: 365,}
-}) 
+
 
 function App() {
   const [pics, setPics] = useState([]);
